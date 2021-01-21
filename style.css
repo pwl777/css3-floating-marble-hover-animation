@@ -1,0 +1,147 @@
+/* ------ CSS3 - Hover Animation ------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    min-height:1500px;
+    background: rgb(71,145,27);
+    background: linear-gradient(0deg, rgba(71,145,27,1) 0%, rgba(239,255,230,1) 100%);
+    margin: auto;
+}
+h1 {
+    font-family: 'Goldman', cursive;
+    font-size: 3.5rem;
+    color: #38fa02;
+    text-shadow: 1px 2px 1px #145c00;
+    text-align: center;
+    margin-top: 70px;
+
+}
+.container {
+    filter: url(#goo);
+    position: relative;
+    margin-left: 40%;
+    padding-top: 100px;
+}
+.button {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transition: .5s ;
+    background-color: black;
+    border-radius: 50%;
+    float: left;
+    margin-right: 5px;
+}
+.button::before {
+    content: '';
+    background-color: white;
+    width: 10px;
+    height: 10px;
+    top: 15px;
+    right: 20px;
+    position: absolute;
+    border-radius: 50%;
+    transform: rotateX(-15deg) rotateY(-15deg);
+}
+/* ------ Ball Shadow ------ */
+.button::after {
+    content: '';
+    background-color: black;
+    width: 100%;
+    height: 10px;
+    left: 0;
+    bottom: -30px;
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(5px);
+}
+/* ------ Text On Balls ------ */
+.button p:nth-child(1) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 40px;
+    z-index: 100;
+    color: white;
+    transform: translate(-50%, -50%) rotateX(0);
+    transition: .3s ease-in;
+}
+.button:hover p:nth-child(1) {
+    transform: translate(-50%, 60%) rotateX(90deg);
+}
+.button p:nth-child(2) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 40px;
+    z-index: 100;
+    color: white;
+    transform: translate(-50%, -170%) rotateX(-90deg);
+    transition: .3s ease-in;
+}
+.button:hover p:nth-child(2) {
+    transform: translate(-50%, -50%) rotateX(0);
+}
+.button:hover ~ .button {
+    transform: translateX(2px);
+}
+
+/*--------------- Responsive transition (0) 375px -----------*/
+@media screen and (min-width: 375px) {
+
+    .container {
+        margin-left: 20%;
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+}
+/*--------------- Responsive transition (0) 425px -----------*/
+@media screen and (min-width: 425px) {
+
+}
+/*--------------- Responsive transition (1) 600px -----------*/
+@media screen and (min-width: 600px) {
+
+}
+
+/*--------------- Responsive transition (2) 768px -----------*/
+@media screen and (min-width: 768px) {
+
+    .container {
+        margin-left: 10%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }       
+}
+/*--------------- Responsive transition (3) 1024px -----------*/
+@media screen and (min-width: 1024px){
+
+    .container {
+        margin-left: 20%;
+        padding-left: 5%;
+        padding-right: 5%;
+    } 
+} 
+
+/*--------------- Responsive transition (4) 1440px -----------*/
+@media screen and (min-width: 1440px) {
+
+    .container {
+        margin-left: 27%;
+        padding-left: 5%;
+        padding-right: 5%;
+    } 
+}
+
+/*--------------- Responsive transition (5) 2500px -----------*/
+@media screen and (min-width: 2500px){
+
+    .container {
+        margin-left: 27%;
+        padding-left: 13%;
+        padding-right: 5%;
+    } 
+} 
